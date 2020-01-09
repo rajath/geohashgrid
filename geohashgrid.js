@@ -3,12 +3,12 @@
 var map, zoomSpan, extentsSpan,
 	gridParts = [],
 	defaults = {
-		zoom: 3,
+		zoom: 14,
 		maxDisplay: 10240,
 		geohashPrecision: 12,
 		geohashZoomScale: [
 		// 00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
-			1,  1,  2,  2,  2,  3,  3,  3,  4,  4,  4,  5,  5,  5,  6,  6,  6,  7,  7,  7,  8,  8,  8,  9,  9,  9
+			1,  1,  2,  2,  2,  3,  3,  3,  4,  4,  4,  5,  5,  6,  6,  6,  6,  7,  7,  7,  8,  8,  8,  9,  9,  9
 		]
 	};
 
@@ -18,7 +18,7 @@ function initialize() {
 
 	map = new google.maps.Map(document.getElementById('map'), {
 		zoom: defaults.zoom,
-		center: new google.maps.LatLng(-27.593691984693564, -48.56170233339071),
+		center: new google.maps.LatLng(12.972442, 77.580643),
 		panControl: false,
 		streetViewControl: false
 	});
@@ -94,10 +94,10 @@ function drawBox(hash) {
 			map: map,
 			bounds: gb,
 			strokeColor: '#3333AA',
-			strokeOpacity: 0.8,
-			strokeWeight: 1,
+			strokeOpacity: 0.4,
+			strokeWeight: 0.3,
 			fillColor: '#222222',
-			fillOpacity: 0.1
+			fillOpacity: 0.0
 		}),
 		labelWidth = hash.length * 6 + 4,
 		marker = new MarkerWithLabel({
